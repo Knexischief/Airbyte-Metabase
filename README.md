@@ -37,7 +37,7 @@ BASIC_AUTH_PASSWORD=your_new_password_here
 ```
 ## Setup and launch Airbyte on Windows
 After installing the WSL 2 backend and Docker you should be able to run containers using Windows PowerShell. Additionally, as we note frequently, you will need docker-compose to build Airbyte from source. The suggested guide already installs docker-compose on Windows.
-Install [Docker Desktop] https://docs.docker.com/desktop/install/windows-install/ from here.
+Install [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) from here.
 
 Make sure to select the options:
 
