@@ -72,7 +72,7 @@ NB; The service account will generate the credentials that will use to access go
 #### Under service account details;
 1. Service account name : Airbyte
 2. Service account ID : Airbyte
-After that click on create and continue 
+* After that click on create and continue 
 3. Select role and choose owner
 Click continue and click done and you have your service account setup. Also don't forget service account email because you will need it again.
 
