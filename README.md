@@ -14,3 +14,13 @@ Join me as we unravel the power and simplicity of Airbyte a tool that empowers l
 
 # Deploy Airbyte on your local machine
 ## Setup and launch Airbyte on Mac
+. Install Docker Engine and the Docker Compose plugin on your workstation. You can check on youtube on how to Install docker on your local machine.
+. After Docker is installed, you can immediately get started locally by running:
+# clone Airbyte from GitHub
+git clone --depth=1 https://github.com/airbytehq/airbyte.git
+
+# switch into Airbyte directory
+cd airbyte
+
+# start Airbyte
+./run-ab-platform.sh
