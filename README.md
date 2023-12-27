@@ -82,7 +82,7 @@ After setting up your service account, click on;
 2. Add key
 3. Create new key
 4. Choose JSON is the key type and click on create.
-Automatically your key will be downloaded so make sure you check your downloads because you will use that key for authentication on airbyte to source your data from goofle sheet.
+* Automatically your key will be downloaded so make sure you check your downloads because you will use that key for authentication on airbyte to source your data from goofle sheet.
 
 ### Share your google sheet data with your service account email
 1. Copy your service email
