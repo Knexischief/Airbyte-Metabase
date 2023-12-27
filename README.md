@@ -30,8 +30,8 @@ In your browser, visit http://localhost:8000
 
 You will be asked for a username and password. By default, that's username airbyte and password password. Once you deploy Airbyte to your servers, be sure to change these in your .env file:
 ``` 
-Proxy Configuration
-Set to empty values, e.g. "" to disable basic auth
+# Proxy Configuration
+# Set to empty values, e.g. "" to disable basic auth
 BASIC_AUTH_USERNAME=your_new_username_here
 BASIC_AUTH_PASSWORD=your_new_password_here
 ```
