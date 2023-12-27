@@ -26,3 +26,6 @@ cd airbyte
 ### start Airbyte
 ./run-ab-platform.sh
 ```
+In your browser, visit http://localhost:8000
+
+You will be asked for a username and password. By default, that's username airbyte and password password. Once you deploy Airbyte to your servers, be sure to change these in your .env file:
