@@ -55,7 +55,7 @@ In your browser, just visit http://localhost:8000
 You will be asked for a username and password. By default, that's username airbyte and password password. Once you deploy airbyte to your servers, be sure to change these.
 Start moving some data!
 
-# Let's setup our first data source (Google sheet)
+# Let's setup our first data source on Airbyte(Google sheet)
 Before you create a new source on airbyte, you would have to create your google sheet API before.
 ### How to create google sheet API.
 First, you need to setup your google platform account [here](https://console.cloud.google.com/) if you don't have one already.
@@ -89,4 +89,16 @@ After setting up your service account, click on;
 2. Go to google sheet where your source data is located
 3. On the top right corner, you will see share 
 4. Click on share and paste your service account email. Make sure you give it an editor access.
+
+### Now that you have your authentication key, lets go back to Airbyte to connect your *Google sheet*;
+* On the Airbyte platform, click on connections 
+* At the top right corner, click on new connection
+* Set up new source
+* Search for google sheet 
+* For Source name, enter a name to help you identify this source; In this case, "Google sheet"
+* Under authentication, click on the dropdown to select "Service account key authentication"
+* Go to your downloads and open the key that you downloaded whilst creating your service account key, copy it and paste it under *service account information*
+* For *Spreadsheet Link*, enter the link to the Google spreadsheet. To get the link, go to the Google spreadsheet you want to sync, click *Share* in the top right corner, and click *Copy Link*.
+* (Optional) You may enable the option to Convert Column Names to SQL-Compliant Format. Enabling this option will allow the connector to convert column names to a standardized, SQL-friendly format. For example, a column name of Café Earnings 2022 will be converted to cafe_earnings_2022. We recommend enabling this option if your target destination is SQL-based (ie Postgres, MySQL). Set to false by default
+* Click Set up source and wait for the tests to complete.
 
