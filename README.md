@@ -4,7 +4,7 @@
 =======
 # Introduction
 ## Why I started this project.
->>>>>>> 0aa9c77 (Add readme file)
+
 Ever felt the frustration of continually uploading CSV data to your PostgreSQL database for analysis in personal projects? I certainly did. That repetitive process sparked a quest for an effortless solution—a quest that led me to delve into the world of data engineering.
 Driven by the desire for real-time data updates without the hassle of manual uploads, I sought guidance from a formal colleague, Cliff who is a data engineer. I posed the question: "Is it possible to achieve live data updates in my database without paying a dollar?" And to my delight, Cliff introduced me to Airbyte, an open-source platform.
 Airbyte promise a seamless synchronisation of data, ensuring that any changes in the source data would  reflect in my Postgres database.
