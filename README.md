@@ -56,3 +56,37 @@ You will be asked for a username and password. By default, that's username airby
 Start moving some data!
 
 # Let's setup our first data source (Google sheet)
+Before you create a new source on airbyte, you would have to create your google sheet API before.
+### How to create google sheet API.
+First, you need to setup your google platform account [here](https://console.cloud.google.com/) if you don't have one already.
+Second, enable your google sheet API on your google cloud platform. How?
+In the search bar, search for "Google sheet API" then click on enable.
+Third, you can also enable your Google drive API using the same steps.
+### Create your service account.
+NB; The service account will generate the credentials that will use to access google sheet.
+* On the cloud console, click on;
+1. Credentials
+2. Create credentials
+3. Service account
+
+#### Under service account details;
+1. Service account name : Airbyte
+2. Service account ID : Airbyte
+After that click on create and continue 
+3. Select role and choose owner
+Click continue and click done and you have your service account setup. Also don't forget service account email because you will need it again.
+
+### Create your service account key
+After setting up your service account, click on;
+1. The email to create your key
+2. Add key
+3. Create new key
+4. Choose JSON is the key type and click on create.
+Automatically your key will be downloaded so make sure you check your downloads because you will use that key for authentication on airbyte to source your data from goofle sheet.
+
+### Share your google sheet data with your service account email
+1. Copy your service email
+2. Go to google sheet where your source data is located
+3. On the top right corner, you will see share 
+4. Click on share and paste your service account email. Make sure you give it an editor access.
+
