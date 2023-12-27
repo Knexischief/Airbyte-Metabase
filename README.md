@@ -13,3 +13,4 @@ This documentation serves as a testament to that journey: a story of discovery, 
 Join me as we unravel the power and simplicity of Airbyte a tool that empowers live data integration without breaking the bank.
 
 # Deploy Airbyte on your local machine
+## Setup and launch Airbyte on Mac
