@@ -97,8 +97,8 @@ After setting up your service account, click on;
 * Search for google sheet 
 * For Source name, enter a name to help you identify this source; In this case, "Google sheet"
 * Under authentication, click on the dropdown to select "Service account key authentication"
-* Go to your downloads and open the key that you downloaded whilst creating your service account key, copy it and paste it under *service account information*
-* For *Spreadsheet Link*, enter the link to the Google spreadsheet. To get the link, go to the Google spreadsheet you want to sync, click *Share* in the top right corner, and click *Copy Link*.
+* Go to your downloads and open the key that you downloaded whilst creating your service account key, copy it and paste it under **service account information**
+* For **Spreadsheet Link**, enter the link to the Google spreadsheet. To get the link, go to the Google spreadsheet you want to sync, click *Share* in the top right corner, and click **Copy Link**.
 * (Optional) You may enable the option to Convert Column Names to SQL-Compliant Format. Enabling this option will allow the connector to convert column names to a standardized, SQL-friendly format. For example, a column name of Café Earnings 2022 will be converted to cafe_earnings_2022. We recommend enabling this option if your target destination is SQL-based (ie Postgres, MySQL). Set to false by default
 * Click Set up source and wait for the tests to complete.
 
