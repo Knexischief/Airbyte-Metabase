@@ -12,4 +12,4 @@ That is how my maiden data engineering project was born, fuelled by the aspirati
 This documentation serves as a testament to that journey: a story of discovery, experimentation, and triumph in the realm of data engineering with Airbyte as the catalyst.
 Join me as we unravel the power and simplicity of Airbyte a tool that empowers live data integration without breaking the bank.
 
-# Create a docker a container for Airbyte
+# Deploy Airbyte on your local machine
