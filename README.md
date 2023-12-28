@@ -109,7 +109,7 @@ Run this command on docker to create your airbyte-Postgres container on docker;
 docker run --rm --name airbyte-postgres -e POSTGRES_PASSWORD=password -p 3000:5432 -d postgres
 ```
 Your airbyte-postgres should be up and running on docker.
-Now go back to Airbyte to connect your destination to the source with the following details.
+### Now go back to Airbyte to connect your destination to the source with the following details.
 
 * In the left navigation bar, click Destinations. In the top-right corner, click new destination.
 * On the Set up the destination page, enter the name for the Postgres connector and select Postgres from the Destination type dropdown.
