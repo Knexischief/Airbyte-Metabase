@@ -55,7 +55,7 @@ In your browser, just visit http://localhost:8000
 You will be asked for a username and password. By default, that's username airbyte and password password. Once you deploy airbyte to your servers, be sure to change these.
 Start moving some data!
 
-# Let's setup our first data source on Airbyte(Google sheet)
+# Let's setup your first data source on Airbyte(Google sheet)
 Before you create a new source on airbyte, you would have to create your google sheet API before.
 ### How to create google sheet API.
 First, you need to setup your google platform account [here](https://console.cloud.google.com/) if you don't have one already.
@@ -101,4 +101,29 @@ After setting up your service account, click on;
 * For **Spreadsheet Link**, enter the link to the Google spreadsheet. To get the link, go to the Google spreadsheet you want to sync, click *Share* in the top right corner, and click **Copy Link**.
 * (Optional) You may enable the option to Convert Column Names to SQL-Compliant Format. Enabling this option will allow the connector to convert column names to a standardized, SQL-friendly format. For example, a column name of Café Earnings 2022 will be converted to cafe_earnings_2022. We recommend enabling this option if your target destination is SQL-based (ie Postgres, MySQL). Set to false by default
 * Click Set up source and wait for the tests to complete.
+
+## Create a Postgres instance on docker 
+You need to create a Postgres instance on docker like we did for Airbyte as your destination to store data sync from Airbyte.
+Run this command on docker to create your airbyte-Postgres container on docker;
+```
+docker run --rm --name airbyte-postgres -e POSTGRES_PASSWORD=password -p 3000:5432 -d postgres
+```
+Your airbyte-postgres should be up and running on docker.
+Now go back to Airbyte to connect your destination to the source with the following details.
+
+* In the left navigation bar, click Destinations. In the top-right corner, click new destination.
+* On the Set up the destination page, enter the name for the Postgres connector and select Postgres from the Destination type dropdown.
+* Enter a name for your source.
+##### For the Host, Port, and DB Name, enter the hostname, port number, and name for your Postgres database.
+* List the Default Schemas.
+##### The schema names are case sensitive. The 'public' schema is set by default. Multiple schemas may be used at one time. No schemas set explicitly - will sync all of existing.
+```
+DATABASE_USER=postgres
+DATABASE_PASSWORD=password
+DATABASE_HOST=host.docker.internal # refers to localhost of host
+DATABASE_PORT=3000
+DATABASE_DB=postgres
+```
+
+
 
