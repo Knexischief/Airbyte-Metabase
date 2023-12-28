@@ -131,7 +131,7 @@ If you set it to manual, you would have sync your data manually any time you upd
 * Replication frequency; the duration you want your data to sync to your database.
 * Destination Namespace; If you leave it, Airbyte will give your schema a default name eg. "public". If you wannt to give your schema a prefered name, 
 1. click on edit
-2. Go to custom and type the prefered name eg. Knexis. If you put it like "Knexis" its going to show like _Knexis_ in your database.
+2. Go to custom and type the prefered name eg. Knexis. If you put it like "Knexis" its going to show like _ Knexis _ in your database.
 
 
 
