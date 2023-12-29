@@ -57,10 +57,10 @@ Start moving some data!
 # Let's setup your first data source on Airbyte(Google sheet)
 Before you create a new source on airbyte, you would have to create your google sheet API before.
 ### How to create google sheet API.
-First, you need to setup your google platform account [here](https://console.cloud.google.com/) if you don't have one already.
-Second, enable your google sheet API on your google cloud platform. How?
-In the search bar, search for "Google sheet API" then click on enable.
-Third, you can also enable your Google drive API using the same steps.
+* You need to setup your google platform account [here](https://console.cloud.google.com/) if you don't have one already.
+* Enable your google sheet API on your google cloud platform. How?
+In the search bar, search for "Google sheet API" then click enable.
+* You can also enable your Google drive API using the same steps.
 ### Create your service account.
 NB; The service account will generate the credentials that will use to access google sheet.
 * On the cloud console, click on;
