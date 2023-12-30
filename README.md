@@ -149,7 +149,7 @@ DATABASE_HOST=host.docker.internal
 DATABASE_PORT=3000
 DATABASE_DB=postgres
 ```
-* You should see your data under the server you just created.
+You should see your data under the server you just created.
 
 
 
