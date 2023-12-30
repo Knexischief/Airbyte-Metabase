@@ -131,7 +131,8 @@ If you set it to manual, you would have sync your data manually any time you upd
 * Destination Namespace; If you leave it, Airbyte will give your schema a default name eg. "public". If you wannt to give your schema a prefered name, 
 1. click on edit
 2. Go to custom and type the prefered name eg. Knexis. If you put it like "Knexis" its going to show like _ Knexis _ in your database.
-
+Now that everything is set, you have to see the physical data in our postgres db so you can do your analysis with it.
+# Set up your PGAdmin4 in docker
 
 
 
