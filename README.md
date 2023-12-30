@@ -172,7 +172,7 @@ Once startup completes, you can access your Open Source Metabase at http://local
  * Put in the details of the database we created on docker**(PGAdmin4)**
  * Click on save and you are good to go!
 
- ################## Thank you for reading!
+ #### Thank you for reading!
 
 
 
