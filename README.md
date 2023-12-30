@@ -164,7 +164,15 @@ To run your Open Source Metabase on a different port, that is when port 3000 is 
 docker run -d -p 12345:3000 --name metabase metabase/metabase
 ```
 Once startup completes, you can access your Open Source Metabase at http://localhost:12345
+ # Connect your database to Metabase
+ * At the top right corner on your Metabase homepage,click the select button 
+ * Select Admin
+ * Select Metabase from the options at the top
+ * On your top right cornor, select add database 
+ * Put in the details of the database we created on docker**(PGAdmin4)**
+ * Click on save and you are good to go!
 
+ ################## Thank you for reading!
 
 
 
