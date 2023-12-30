@@ -150,6 +150,25 @@ DATABASE_PORT=3000
 DATABASE_DB=postgres
 ```
 You should see your data under the server you just created.
+# Running Metabase on Docker v0.48
+### Assuming you have Docker installed and running, get the latest Docker image:
+```
+docker pull metabase/metabase:latest
+```
+Then start the Metabase container:
+```
+docker run -d -p 3000:3000 --name metabase metabase/metabase
+```
+To run your Open Source Metabase on a different port, that is when port 3000 is use already. So you can use something like 12345;
+```
+docker run -d -p 12345:3000 --name metabase metabase/metabase
+```
+Once startup completes, you can access your Open Source Metabase at http://localhost:12345
+
+
+
+
+
 
 
 
