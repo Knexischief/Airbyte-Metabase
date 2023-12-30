@@ -133,6 +133,23 @@ If you set it to manual, you would have sync your data manually any time you upd
 2. Go to custom and type the prefered name eg. Knexis. If you put it like "Knexis" its going to show like _ Knexis _ in your database.
 Now that everything is set, you have to see the physical data in our postgres db so you can do your analysis with it.
 # Set up your PGAdmin4 in docker
+* Open your docker
+* In the left navigation bar, click **Extensions**
+* Search and download PGAdmin4
+* Open PGAdmin4 and create your first server with these details;
+* Right click on server
+* Register 
+* Server 
+* Under General just give any name you want to use for your server
+* Under connections, use the details below and save.
+```
+Name = postgres
+DATABASE_PASSWORD = password
+DATABASE_HOST=host.docker.internal 
+DATABASE_PORT=3000
+DATABASE_DB=postgres
+```
+* You should see your data under the server you just created.
 
 
 
