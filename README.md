@@ -159,7 +159,7 @@ Then start the Metabase container:
 ```
 docker run -d -p 3000:3000 --name metabase metabase/metabase
 ```
-To run your Open Source Metabase on a different port, that is when port 3000 is use already. So you can use something like 12345;
+To run your Open Source Metabase on a different port, that is when port 3000 is in use already, you can use something like 12345;
 ```
 docker run -d -p 12345:3000 --name metabase metabase/metabase
 ```
