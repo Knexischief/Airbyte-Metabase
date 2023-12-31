@@ -1,4 +1,5 @@
 # Sync data with airbyte to metabase 
+![Flow chat](airbyte-metabase.png)
 This documentation is about how to create airbyte container on docker to sync data from Google sheet to Postgres and link it to Metabase locally
 
 # Introduction
