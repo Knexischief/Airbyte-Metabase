@@ -1,19 +1,12 @@
-# Sync data with airbyte to metabase 
+# Synchronizing Google Sheets to PostgreSQL via Airbyte and Visualizing Insights with Metabase
 ![Flow chat](airbyte-metabase.png)
-This documentation is about how to create airbyte container on docker to sync data from Google sheet to Postgres and link it to Metabase locally
 
-# Introduction
-## Why I started this project.
 
-Ever felt the frustration of continually uploading CSV data to your PostgreSQL database for analysis in personal projects? I certainly did. That repetitive process sparked a quest for an effortless solution—a quest that led me to delve into the world of data engineering.
-Driven by the desire for real-time data updates without the hassle of manual uploads, I sought guidance from a formal colleague, Cliff who is a data engineer. I posed the question: "Is it possible to achieve live data updates in my database without paying a dollar?" And to my delight, Cliff introduced me to Airbyte, an open-source platform.
-Airbyte promise a seamless synchronisation of data, ensuring that any changes in the source data would  reflect in my Postgres database.
-That is how my maiden data engineering project was born, fuelled by the aspiration to break free from manual data uploads and embrace a dynamic, always-updated database landscape.
-This documentation serves as a testament to that journey: a story of discovery, experimentation, and triumph in the realm of data engineering with Airbyte as the catalyst.
-Join me as we unravel the power and simplicity of Airbyte a tool that empowers live data integration without breaking the bank.
+# Description
+This documentation provides a comprehensive guide on configuring Airbyte within a Docker container to seamlessly synchronize data from Google Sheets to a local PostgreSQL database. Additionally, it offers step-by-step instructions to establish a connection between the synced data and Metabase for insightful analysis and reporting.
 
 # Deploy Airbyte on your local machine
-## Setup and launch Airbyte on Mac
+### Setup and launch Airbyte on Mac
 1. Install Docker Engine and the Docker Compose plugin on your workstation.You can check on youtube on how to Install docker on your local machine.
 2. After Docker is installed, you can immediately get started locally by running:
 ```
@@ -28,7 +21,7 @@ cd airbyte
 ```
 In your browser, visit http://localhost:8000
 
-You will be asked for a username and password. By default, that's username airbyte and password password. Once you deploy Airbyte to your servers, be sure to change these in your .env file:
+You will be asked for a username and password. By default, username:airbyte and password:password. Once you deploy Airbyte to your servers, be sure to change these in your .env file:
 ``` 
 # Proxy Configuration
 # Set to empty values, e.g. "" to disable basic auth
@@ -55,12 +48,11 @@ In your browser, just visit http://localhost:8000
 You will be asked for a username and password. By default, that's username airbyte and password password. Once you deploy airbyte to your servers, be sure to change these.
 Start moving some data!
 
-# Let's setup your first data source on Airbyte(Google sheet)
+# Setup your first data source on Airbyte(Google sheet)
 Before you create a new source on airbyte, you would have to create your google sheet API before.
 ### How to create google sheet API.
 * You need to setup your google platform account [here](https://console.cloud.google.com/) if you don't have one already.
-* Enable your google sheet API on your google cloud platform. How?
-In the search bar, search for **Google sheet API** then click enable.
+* Enable your google sheet API on your google cloud platform. How?; In the search bar, search for **Google sheet API** then click enable.
 * You can also enable your Google drive API using the same steps.
 ### Create your service account.
 NB; The service account will generate the credentials that will use to access google sheet.
@@ -81,8 +73,8 @@ After setting up your service account, click on;
 1. The email to create your key
 2. Add key
 3. Create new key
-4. Choose JSON is the key type and click on create.
-* Automatically your key will be downloaded so make sure you check your downloads because you will use that key for authentication on airbyte to source your data from goofle sheet.
+4. Choose JSON is the key type and click create.
+* Automatically your key will be downloaded so make sure you check your downloads because you will use that key for authentication on airbyte to source your data from google sheet.
 
 ### Share your google sheet data with your service account email
 1. Copy your service email
@@ -90,13 +82,13 @@ After setting up your service account, click on;
 3. On the top right corner, you will see share 
 4. Click on share and paste your service account email. Make sure you give it an editor access.
 
-### Now that you have your authentication key, lets go back to Airbyte to connect your *Google sheet*;
-* On the Airbyte platform, click on connections 
-* At the top right corner, click on new connection
+### Now that you have your authentication key, go back to Airbyte to connect your *Google sheet*;
+* On the Airbyte platform, click connections 
+* At the top right corner, click new connection
 * Set up new source
 * Search for google sheet 
-* For Source name, enter a name to help you identify this source; In this case, "Google sheet"
-* Under authentication, click on the dropdown to select "Service account key authentication"
+* For Source name, enter a name to help you identify this source; In this case, **Google sheet**
+* Under authentication, click on the dropdown to select **Service account key authentication**
 * Go to your downloads and open the key that you downloaded whilst creating your service account key, copy it and paste it under **service account information**
 * For **Spreadsheet Link**, enter the link to the Google spreadsheet. To get the link, go to the Google spreadsheet you want to sync, click *Share* in the top right corner, and click **Copy Link**.
 * (Optional) You may enable the option to Convert Column Names to SQL-Compliant Format. Enabling this option will allow the connector to convert column names to a standardized, SQL-friendly format. For example, a column name of Café Earnings 2022 will be converted to cafe_earnings_2022. We recommend enabling this option if your target destination is SQL-based (ie Postgres, MySQL). Set to false by default
@@ -125,7 +117,7 @@ DATABASE_PORT=3000
 DATABASE_DB=postgres
 ```
 
-### Lets setup the Configuration
+### Setup the Configuration
 * Schedule type should be set to schedule if you want Airbyte to sync your data Automatically based on the duration you set. 
 If you set it to manual, you would have sync your data manually any time you update your data.
 * Replication frequency; the duration you want your data to sync to your database.
@@ -137,11 +129,11 @@ Now that everything is set, you have to see the physical data in our postgres db
 * Open your docker
 * In the left navigation bar, click **Extensions**
 * Search and download PGAdmin4
-* Open PGAdmin4 and create your first server with these details;
+* Open PGAdmin4 and create your first server with the ff details;
 * Right click on server
 * Register 
 * Server 
-* Under General just give any name you want to use for your server
+* Under General just give any name you want to use as your server
 * Under connections, use the details below and save.
 ```
 Name = postgres
@@ -151,6 +143,7 @@ DATABASE_PORT=3000
 DATABASE_DB=postgres
 ```
 You should see your data under the server you just created.
+
 # Running Metabase on Docker v0.48
 ### Assuming you have Docker installed and running, get the latest Docker image:
 ```
@@ -173,7 +166,7 @@ Once startup completes, you can access your Open Source Metabase at http://local
  * Put in the details of the database we created on docker**(PGAdmin4)**
  * Click on save and you are good to go!
 
- #### Thank you for reading!
+ #### Glad to receive your feedbacks.
 
 
 
