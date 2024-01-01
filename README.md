@@ -7,8 +7,8 @@ This documentation provides a comprehensive guide on configuring Airbyte within 
 
 # Deploy Airbyte on your local machine
 ### Setup and launch Airbyte on Mac
-1. Install Docker Engine and the Docker Compose plugin on your workstation.You can check on youtube on how to Install docker on your local machine.
-2. After Docker is installed, you can immediately get started locally by running:
+* Install Docker Engine and the Docker Compose plugin on your workstation.You can check on youtube on how to Install docker on your local machine.
+* After Docker is installed, you can immediately get started locally by running:
 ```
 ### clone Airbyte from GitHub
 git clone --depth=1 https://github.com/airbytehq/airbyte.git
@@ -32,11 +32,10 @@ BASIC_AUTH_PASSWORD=your_new_password_here
 After installing the WSL 2 backend and Docker you should be able to run containers using Windows PowerShell. Additionally, as we note frequently, you will need docker-compose to build Airbyte from source. The suggested guide already installs docker-compose on Windows.
 Install [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) from here.
 
-Make sure to select the options:
-
-1. Enable Hyper-V Windows Features
-2. Install required Windows components for WSL 2 when prompted. After installation, it will require to reboot your computer.
-3. You're done!
+Make sure to select these options:
+* Enable Hyper-V Windows Features
+* Install required Windows components for WSL 2 when prompted. After installation, it will require to reboot your computer.
+* You're done!
 
 ```
 git clone --depth=1 https://github.com/airbytehq/airbyte.git
@@ -56,31 +55,31 @@ Before you create a new source on airbyte, you would have to create your google 
 * You can also enable your Google drive API using the same steps.
 ### Create your service account.
 NB; The service account will generate the credentials that will use to access google sheet.
-* On the cloud console, click on;
-1. Credentials
-2. Create credentials
-3. Service account
+On the cloud console, click on;
+* Credentials
+* Create credentials
+* Service account
 
 #### Under service account details;
-1. Service account name : Airbyte
-2. Service account ID : Airbyte
+* Service account name : Airbyte
+* Service account ID : Airbyte
 * After that click on create and continue 
-3. Select role and choose owner
+* Select role and choose owner
 Click continue and click done and you have your service account setup. Also don't forget service account email because you will need it again.
 
 ### Create your service account key
 After setting up your service account, click on;
-1. The email to create your key
-2. Add key
-3. Create new key
-4. Choose JSON is the key type and click create.
-* Automatically your key will be downloaded so make sure you check your downloads because you will use that key for authentication on airbyte to source your data from google sheet.
+* The email to create your key
+* Add key
+* Create new key
+* Choose JSON is the key type and click create.
+Automatically your key will be downloaded so make sure you check your downloads because you will use that key for authentication on airbyte to source your data from google sheet.
 
 ### Share your google sheet data with your service account email
-1. Copy your service email
-2. Go to google sheet where your source data is located
-3. On the top right corner, you will see share 
-4. Click on share and paste your service account email. Make sure you give it an editor access.
+* Copy your service email
+* Go to google sheet where your source data is located
+* On the top right corner, you will see share 
+* Click on share and paste your service account email. Make sure you give it an editor access.
 
 ### Now that you have your authentication key, go back to Airbyte to connect your *Google sheet*;
 * On the Airbyte platform, click connections 
